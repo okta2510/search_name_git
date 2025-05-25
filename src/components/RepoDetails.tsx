@@ -1,8 +1,10 @@
+'use client';
 import { useEffect, useState } from 'react';
 import { fetchGitHubRepo, fetchGitHubRepoReadme } from '@/helpers/api';
 import ReactMarkdown from 'react-markdown';
 import { atob } from 'abab';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 interface RepoDetailsProps {
   repoName: string;
@@ -21,6 +23,9 @@ export default function RepoDetails({ repoName }: RepoDetailsProps) {
   const [repoData, setRepoData] = useState<GitHubRepo[] | null>(null);
   const [readmeData, setReadmeData] = useState<{ [key: string]: string | null }>({});
   const [error, setError] = useState('');
+
+  const params = useParams();
+const username = params?.username as string;
 
   useEffect(() => {
     const getRepoData = async () => {
@@ -81,57 +86,59 @@ export default function RepoDetails({ repoName }: RepoDetailsProps) {
 
   if (!repoData) {
     <div
-      className="container mx-auto text-center"
       style={{
-        paddingTop: '100px',
-        minHeight: '200px',
-        color: '#2563eb',
-        background: 'linear-gradient(90deg, #f3f4f6 0%, #e0e7ff 100%)',
-        borderRadius: '8px',
-        maxWidth: '400px',
-        margin: '100px auto',
-        boxShadow: '0 2px 8px rgba(37,99,235,0.08)',
-        fontWeight: 600,
-        fontSize: '1.2rem',
-        letterSpacing: '0.02em',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+      width: '100vw',
+      background: 'linear-gradient(90deg, #f3f4f6 0%, #e0e7ff 100%)',
       }}
     >
-      <svg
-        className="mb-4 animate-spin"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        style={{ color: '#2563eb' }}
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+      style={{
+        background: '#fff',
+        borderRadius: '12px',
+        boxShadow: '0 2px 16px rgba(37,99,235,0.10)',
+        padding: '48px 32px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: '320px',
+      }}
       >
-        <circle
-          className="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          strokeWidth="4"
-        />
-        <path
-          className="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-        />
-      </svg>
-      <div>Loading...</div>
+      <div
+        style={{
+        color: '#2563eb',
+        fontWeight: 600,
+        fontSize: '1.3rem',
+        letterSpacing: '0.02em',
+        }}
+      >
+        Loading...
+      </div>
+      </div>
     </div>
   }
 
   return (
     <div className='container mx-auto' style={{ paddingTop: '100px' }}>
-      <div className="mb-6">
+      <div className="mb-6 repo-header">
         <Link href="/" legacyBehavior>
           <a className="inline-block px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700">
-            Back to Homepage
+        Back to Homepage
           </a>
         </Link>
+        <span>Repository Name :  <b>{repoName}</b></span>
       </div>
+      <style jsx>{`
+        .repo-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      `}</style>
       <div className="flex flex-wrap justify-center gap-4" >
       {repoData && repoData.map((repo) => (
       <div key={repo.name} className="p-6 mb-4 bg-white rounded-lg shadow-md "style={{ border: 'solid 1px #f1f1f1' }}>

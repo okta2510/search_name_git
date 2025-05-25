@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities; */
 
-/* :root {
+:root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -16,7 +16,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-} */
+}
 /* Container and spacing */
 .container {
   max-width: 1200px; /* custom width */

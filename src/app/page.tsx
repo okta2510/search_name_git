@@ -1,3 +1,4 @@
+'use client';
 import SearchUsername from "@/components/SearchUsername";
 
 export default function Home() {
