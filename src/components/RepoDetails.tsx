@@ -4,7 +4,6 @@ import { fetchGitHubRepo, fetchGitHubRepoReadme } from '@/helpers/api';
 import ReactMarkdown from 'react-markdown';
 import { atob } from 'abab';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 
 interface RepoDetailsProps {
   repoName: string;
@@ -24,8 +23,6 @@ export default function RepoDetails({ repoName }: RepoDetailsProps) {
   const [readmeData, setReadmeData] = useState<{ [key: string]: string | null }>({});
   const [error, setError] = useState('');
 
-  const params = useParams();
-const username = params?.username as string;
 
   useEffect(() => {
     const getRepoData = async () => {
