@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
   --background: #ffffff;
@@ -16,4 +16,307 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+/* Container and spacing */
+.container {
+  max-width: 1200px; /* custom width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px; /* override inline style if needed */
+}
+
+/* Margin bottom */
+.mb-6 {
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+.mb-4 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+/* Padding */
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: 1fr;
+  /* Use media query for md breakpoint */
+}
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+/* Backgrounds */
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb; /* your custom blue */
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6; /* lighter blue */
+}
+
+/* Text */
+.text-white {
+  color: #fff;
+}
+
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.text-gray-600 {
+  color: #718096;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Hover */
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+/* Rounded corners */
+.rounded {
+  border-radius: 0.375rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+/* Shadow */
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Inline block */
+.inline-block {
+  display: inline-block;
+}
+
+/* Margin top */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  color: #fff; /* text-white */
+  background-color: #2563eb; /* bg-blue-600 */
+  border-radius: 0.375rem; /* rounded */
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  border: none;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  background-color: #1d4ed8; /* bg-blue-700 */
+  outline: none;
+}
+
+
+a {text-decoration: none;}
+button {border: unset;}
+button:hover, button:focus {cursor: pointer;}
+
+
+.readme {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  line-height: 1.75;
+  color: #111;
+  background-color: #F3F4F6;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  overflow-x: auto;
+  font-size: 16px;
+}
+
+/* Headings */
+.readme h1,
+.readme h2,
+.readme h3,
+.readme h4,
+.readme h5,
+.readme h6 {
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #1f2937;
+  line-height: 1.4;
+}
+
+.readme h1 {
+  font-size: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.3rem;
+}
+.readme h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+}
+.readme h3 { font-size: 1.25rem; }
+.readme h4 { font-size: 1.125rem; }
+.readme h5 { font-size: 1rem; }
+.readme h6 { font-size: 0.875rem; }
+
+/* Paragraphs */
+.readme p {
+  margin: 1rem 0;
+}
+
+/* Links */
+.readme a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.readme a:hover {
+  text-decoration: underline;
+}
+
+/* Images (e.g., badges) */
+.readme img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* Inline code */
+.readme code {
+  background-color: #f3f4f6;
+  color: #e11d48;
+  font-family: 'Fira Code', monospace;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Code block */
+.readme pre {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  margin: 1.5rem 0;
+}
+
+/* Blockquote */
+.readme blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1rem;
+  color: #6b7280;
+  background-color: #f9fafb;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+/* Tables */
+.readme table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.readme th,
+.readme td {
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.readme th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+}
+
+/* Lists */
+.readme ul,
+.readme ol {
+  margin: 1rem 0 1rem 1.5rem;
+}
+
+.readme li {
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal overflow text handling (like className="overflow-hidden text-ellipsis whitespace-nowrap") */
+.readme {
+  white-space: normal;
+  text-overflow: initial;
+  overflow: visible;
 }
