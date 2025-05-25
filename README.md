@@ -34,3 +34,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+# 🚀 GitHub Repository Search App
+
+A Next.js 15 application to search GitHub users and display their repositories, including README files.
+
+---
+
+## 🛠️ Development Environment Setup
+
+### ✅ Requirements
+
+- **nvm**: Node Version Manager (`v0.39.7`)
+- **node**: Version `v24.1.0`
+- **npm**: Version `11.3.0`
+
+---
+
+### 1. Install NVM
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+nvm -v  # should output 0.39.7
+
+nvm install 24.1.0
+nvm use 24.1.0
+
+nvm alias default 24.1.0
+
+node -v   # v24.1.0
+npm -v    # 11.3.0
+
+npm install
+
+npm run dev
